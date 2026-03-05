@@ -1,81 +1,81 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>吉林省公务员考试常识答题器</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
-  :root {
-    --red:#c0392b; --gold:#c9a84c; --darker:#0f0f1a; --card:#16213e;
-    --border:rgba(201,168,76,0.3); --text:#e8e0d0; --muted:rgba(232,224,208,0.5); --green:#27ae60;
+<超文本标记语言 语言=“zh-CN”>
+<头>
+<自指的 字符集=“UTF八号”>
+<自指的 名字="视窗" 内容=宽度=设备宽度，初始比例=1.0>
+<标题>吉林省公务员考试常识答题器</标题>
+<风格>
+  @导入 全球资源定位器(Uniform Resource Locator)('https://fonts.googleapis.com/css2？family = Noto+Serif+SC:wght @ 400；600;700 & family = Noto+Sans+SC:wght @ 300；400;500&display=swap ');
+  :根 {
+    -红色:# c0392b-黄金:# c 9 a 84c；-更暗:# 0 f0f 1a；-卡片:# 16213e
+    -边框:rgba(201,168,76,0.3); -文本:# e8e0d0-静音:rgba(232,224,208,0.5); 绿色:# 27ae60
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--darker);color:var(--text);font-family:'Noto Sans SC',sans-serif;min-height:100vh;
-    background-image:radial-gradient(ellipse at 15% 15%,rgba(192,57,43,.08) 0%,transparent 50%),
-    radial-gradient(ellipse at 85% 85%,rgba(201,168,76,.06) 0%,transparent 50%);}
-  header{text-align:center;padding:32px 20px 16px;border-bottom:1px solid var(--border);}
-  .badge{display:inline-block;background:linear-gradient(135deg,var(--red),#8b1a1a);color:var(--gold);
-    font-family:'Noto Serif SC',serif;font-size:11px;letter-spacing:3px;padding:4px 16px;
-    border:1px solid var(--gold);margin-bottom:10px;}
-  h1{font-family:'Noto Serif SC',serif;font-size:clamp(18px,4vw,28px);font-weight:700;letter-spacing:2px;}
-  h1 span{color:var(--gold);}
-  .subtitle{font-size:11px;color:var(--muted);letter-spacing:4px;margin-top:5px;}
+  *{边缘:0;填料:0;盒子尺寸:边框;}
+  身体{背景:定义变量(-更暗);颜色:定义变量(-文本);字体系列:不要放弃,无衬线字体;最小高度:100vh;
+    背景图像:径向梯度(椭圆 在 15% 15%,rgba(192,57,43,.08) 0%,透明的 50%),
+    径向梯度(椭圆 在 85% 85%,rgba(201,168,76,.06) 0%,透明的 50%);}
+  页眉{文本对齐:中心;填料:32像素 20像素 16像素;边框-底部:1像素 固体 定义变量(-边框);}
+  .标记{显示:内嵌块;背景:线性梯度(135（同degree）度,定义变量(-红色)，#8b1a1a);颜色:定义变量(-黄金);
+    字体系列:'无衬线SC ',衬线;字体大小:11像素;字母间距:3像素;填料:4像素 16像素;
+    边界:1像素 固体 定义变量(-黄金);页边距-底部:10像素;}
+  氕{字体系列:'无衬线SC ',衬线;字体大小:夹子(18像素,4大众汽车（Volkswagen的缩写）,28像素);字体粗细:700;字母间距:2像素;}
+  氕 跨度{颜色:定义变量(-黄金);}
+  .小标题{字体大小:11像素;颜色:定义变量(-静音);字母间距:4像素;上边距:5像素;}
 
-  /* Stats */
-  .stats-bar{display:flex;justify-content:center;background:var(--card);border-bottom:1px solid var(--border);}
-  .stat{text-align:center;padding:12px 24px;border-right:1px solid var(--border);}
-  .stat:last-child{border-right:none;}
-  .stat-num{font-family:'Noto Serif SC',serif;font-size:22px;color:var(--gold);font-weight:700;}
-  .stat-label{font-size:10px;color:var(--muted);letter-spacing:1px;margin-top:3px;}
+  /*统计*/
+  .统计栏{显示:弯曲;调整内容:中心;背景:定义变量(-卡片);边框-底部:1像素 固体 定义变量(-边框);}
+  .斯达{文本对齐:中心;填料:12像素 24像素;右边框:1像素 固体 定义变量(-边框);}
+  .斯达:最小的孩子{右边框:没有人;}
+  .统计数字{字体系列:'无衬线SC ',衬线;字体大小:22像素;颜色:定义变量(-黄金);字体粗细:700;}
+  .统计标签{字体大小:10像素;颜色:定义变量(-静音);字母间距:1像素;上边距:3像素;}
 
-  .container{max-width:780px;margin:0 auto;padding:24px 14px 60px;}
+  .容器{最大宽度:780像素;边缘:0 汽车;填料:24像素 14像素 60像素;}
 
-  /* Mode tabs */
-  .mode-tabs{display:flex;margin-bottom:20px;border:1px solid var(--border);overflow:hidden;}
-  .mode-tab{flex:1;padding:11px;text-align:center;cursor:pointer;font-size:13px;letter-spacing:1px;
-    background:transparent;color:var(--muted);border:none;font-family:'Noto Sans SC',sans-serif;
-    transition:all .18s;}
-  .mode-tab.active{background:rgba(201,168,76,.12);color:var(--gold);}
-  .mode-tab:first-child{border-right:1px solid var(--border);}
+  /*模式选项卡*/
+  .模式标签{显示:弯曲;页边距-底部:20像素;边界:1像素 固体 定义变量(-边框);泛滥:隐藏的;}
+  .模式选项卡{弯曲:1;填料:11像素;文本对齐:中心;光标:指针;字体大小:13像素;字母间距:1像素;
+    背景:透明的;颜色:定义变量(-静音);边界:没有人;字体系列:不要放弃,无衬线字体;
+    过渡:全部 .18s;}
+  .模式选项卡.活跃的{背景:rgba(201,168,76,.12);颜色:定义变量(-黄金);}
+  .模式选项卡:第一胎{右边框:1像素 固体 定义变量(-边框);}
 
-  /* Setup panel */
-  .setup-panel{background:var(--card);border:1px solid var(--border);padding:22px;margin-bottom:18px;position:relative;}
-  .setup-panel::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;
-    background:linear-gradient(to bottom,var(--red),var(--gold));}
-  .section-title{font-family:'Noto Serif SC',serif;font-size:13px;color:var(--gold);letter-spacing:2px;
-    margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-  .section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+  /*设置面板*/
+  .设置-面板{背景:定义变量(-卡片);边界:1像素 固体 定义变量(-边框);填料:22像素;页边距-底部:18像素;位置:亲戚;}
+  .设置-面板::以前{内容:'';位置:绝对的;顶端:0;左边的:0;宽度:4像素;高度:100%;
+    背景:线性梯度(到 底部,定义变量(-红色),定义变量(-黄金));}
+  .章节-标题{字体系列:'无衬线SC ',衬线;字体大小:13像素;颜色:定义变量(-黄金);字母间距:2像素;
+    页边距-底部:12像素;显示:弯曲;对齐-项目:中心;缝隙:8像素;}
+  .章节-标题::在...之后{内容:'';弯曲:1;高度:1像素;背景:定义变量(-边框);}
 
-  .categories{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-  .cat-btn{background:transparent;border:1px solid var(--border);color:var(--muted);
-    font-family:'Noto Sans SC',sans-serif;font-size:12px;padding:5px 13px;cursor:pointer;transition:all .18s;}
-  .cat-btn.active,.cat-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08);}
+  .种类{显示:弯曲;柔性包装:包;缝隙:8像素;页边距-底部:16像素;}
+  .cat-btn{背景:透明的;边界:1像素 固体 定义变量(-边框);颜色:定义变量(-静音);
+    字体系列:不要放弃,无衬线字体;字体大小:12像素;填料:5像素 13像素;光标:指针;过渡:全部 .18s;}
+  .cat-btn.活跃的,.cat-btn:盘旋{边框颜色:定义变量(-黄金);颜色:定义变量(-黄金);背景:rgba(201,168,76,.08);}
 
-  .row{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
-  .row label{font-size:12px;color:var(--muted);white-space:nowrap;}
-  select{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);
-    font-family:'Noto Sans SC',sans-serif;font-size:13px;padding:5px 10px;outline:none;cursor:pointer;}
+  .排{显示:弯曲;对齐-项目:中心;缝隙:12像素;页边距-底部:16像素;柔性包装:包;}
+  .排 标签{字体大小:12像素;颜色:定义变量(-静音);空白:nowrap;}
+  挑选{背景:rgba(255,255,255,.04);边界:1像素 固体 定义变量(-边框);颜色:定义变量(-文本);
+    字体系列:不要放弃,无衬线字体;字体大小:13像素;填料:5像素 10像素;概述:没有人;光标:指针;}
 
-  /* Buttons */
-  .btn{cursor:pointer;font-family:'Noto Sans SC',sans-serif;font-size:13px;letter-spacing:1px;
-    padding:10px 24px;border:none;transition:all .18s;}
-  .btn-primary{background:linear-gradient(135deg,var(--red),#a93226);color:#fff;border:1px solid var(--red);}
-  .btn-primary:hover:not(:disabled){filter:brightness(1.15);transform:translateY(-1px);}
-  .btn-primary:disabled{opacity:.45;cursor:not-allowed;}
-  .btn-outline{background:transparent;color:var(--gold);border:1px solid var(--border);}
-  .btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,.05);}
-  .btn-green{background:linear-gradient(135deg,#27ae60,#1e8449);color:#fff;border:1px solid #27ae60;}
-  .btn-green:hover:not(:disabled){filter:brightness(1.15);transform:translateY(-1px);}
-  .btn-green:disabled{opacity:.45;cursor:not-allowed;}
-  .btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  /*按钮*/
+  .btn{光标:指针;字体系列:不要放弃,无衬线字体;字体大小:13像素;字母间距:1像素;
+    填料:10像素 24像素;边界:没有人;过渡:全部 .18s;}
+  .BTN-初级{背景:线性梯度(135（同degree）度,定义变量(-红色)，#a93226);颜色:# fff边界:1像素 固体 定义变量(-红色);}
+  .BTN-初级:盘旋:不(:有缺陷的){过滤器:聪明(1.15);改变:翻译(-1像素);}
+  .BTN-初级:有缺陷的{不透明:.45;光标:不允许;}
+  .BTN-大纲{背景:透明的;颜色:定义变量(-黄金);边界:1像素 固体 定义变量(-边框);}
+  .BTN-大纲:盘旋{边框颜色:定义变量(-黄金);背景:rgba(201,168,76,.05);}
+  .BTN-绿色{背景:线性梯度(135（同degree）度，#27ae60，#1e8449);颜色:# fff边界:1像素 固体# 27ae60}
+  .BTN-绿色:盘旋:不(:有缺陷的){过滤器:聪明(1.15);改变:翻译(-1像素);}
+  .BTN-绿色:有缺陷的{不透明:.45;光标:不允许;}
+  .btn-row{显示:弯曲;缝隙:10像素;柔性包装:包;对齐-项目:中心;}
 
-  /* Info tag */
-  .info-tag{display:inline-block;font-size:11px;color:var(--muted);border:1px dashed var(--border);
-    padding:6px 12px;line-height:1.6;margin-top:10px;}
+  /*信息标签*/
+  .信息标签{显示:内嵌块;字体大小:11像素;颜色:定义变量(-静音);边界:1像素 虚线 定义变量(-边框);
+    填料:6像素 12像素;行高:1.6;上边距:10像素;}
 
-  /* Quiz card */
-  .quiz-card{background:var(--card);border:1px solid var(--border);padding:24px 26px;
+  /*测验卡*/
+  .测验卡{背景:定义变量(-卡片);边界:1像素 固体 定义变量(-边框);填料:24像素 26像素;
     margin-bottom:16px;position:relative;animation:fadeUp .35s ease;}
   .quiz-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;
     background:linear-gradient(to bottom,rgba(201,168,76,.6),transparent);}
